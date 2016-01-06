@@ -1,0 +1,14 @@
+{
+  "name": "tic-tac-toe",
+  "version": "1.0.0",
+  "description": "A 2 player tic-tac-toe built with Angular",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gary Torres",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.4.8"
+  }
+}
