@@ -13,14 +13,14 @@ angular.module('ticTacToeApp')
 
         $scope.player1 = {
             name: 'John',
-            avatar: '/images/avatars/guy.jpg',
+            avatar: 'images/avatars/guy.jpg',
             icon: 'x',
             color: '#',
             selected: false
         };
         $scope.player2 = {
             name: 'Rebel',
-            avatar: '/images/avatars/rebel.png',
+            avatar: 'images/avatars/rebel.png',
             icon: 'o',
             color: '#',
             selected: false
