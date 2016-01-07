@@ -1,0 +1,33 @@
+<body>
+  <span class="settings-button glyphicon glyphicon-cog" ng-click="showSettings()"></span>
+
+  <div ng-class="(player1.selected)? 'player-indicator player1 selected' : 'player-indicator player1'">
+  </div>
+
+  <div ng-class="(player2.selected)? 'player-indicator player2 selected' : 'player-indicator player2'">
+  </div>
+  
+  <div ng-class="(player1.selected)? 'animated player player1 bounceIn ' : 'animated player player1 bounceOut'">
+    <img ng-src="{{player1.avatar}}" />
+    <div class="name">{{player1.name}}</div>
+  </div>
+
+  <div ng-class="(player2.selected)? 'animated player player2 bounceIn' : 'animated player player2 bounceOut'">
+    <img ng-src="{{player2.avatar}}" />
+    <div class="name">{{player2.name}}</div>
+  </div>
+
+  <div class="board">
+
+    <div class="board-row" ng-repeat="row in board" ng-init="rowIndex = $index">
+
+      <div class="cell empty" ng-repeat="cell in row track by $index" ng-init="colIndex = $index" ng-click="makeMove(rowIndex, colIndex)">
+        <div class="symbol">{{cell}}</div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+</body>
