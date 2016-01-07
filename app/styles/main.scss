@@ -109,5 +109,34 @@ body {
   }
 }
 
+.diff-container{
+  position: relative;
+  width: 100%;
+  height: 150px;
+  text-align: center;
+  
+}
 
-
+.diff-level{
+    width: 110px;
+    margin: 5px;
+    position: relative;
+    padding: 10px;
+  
+  &.selected{
+    border: 1px solid mediumseagreen;
+  }
+  
+  position: relative;
+  .title{
+    font-size: 1.2em;
+  }
+  .diff-label{
+    font-size: 0.9em;
+  }
+  .description{
+    color: gray;
+    margin-top: -5px;
+    font-size: 0.8em;
+  }
+}

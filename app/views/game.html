@@ -1,5 +1,7 @@
 <body>
-  <div ng-class="(player1.selected)? 'animated player player1 bounceIn ' : 'animated player player1 bounceOut'">
+  <span class="glyphicon glyphicon-search"></span>
+  
+  <div ng-class="(player1.selected)? 'animated player player1 bounceIn ' : 'animated player player1 bounceOut'" ng-click="showSettings()">
     <img ng-src="{{player1.avatar}}" />
     <div class="name">{{player1.name}}</div>
   </div>
