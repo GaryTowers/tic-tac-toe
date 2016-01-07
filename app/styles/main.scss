@@ -13,6 +13,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 body {
   padding: 0;
   background-color: #6869B0;
+  overflow: hidden;
 }
 
 .center{
@@ -109,5 +110,78 @@ body {
   }
 }
 
+.player-indicator{
+    transition: all ease 0.7s;
+    width: 150%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+   
+    z-index: -20;
+    
+    &.player1{
+      transform: translateX(-35%) rotateZ(-55deg);
+      background-color: rgba(255, 255, 255, 0.6);
+      &.selected{
+        transform: translateX(-30%) rotateZ(-55deg);
+      }
+    }
+    
+    &.player2{
+      transform: translateX(85%) rotateZ(-55deg);
+      background-color: rgba(100, 200, 100, 0.6);
+      
+      &.selected{
+        transform: translateX(0%) rotateZ(55deg);        
+      }
+    }
+}
 
+.levels-container{
+  position: relative;
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  
+}
 
+.diff-level{
+    margin: 15px;
+    position: relative;
+    padding: 10px;
+    transition: all ease 0.5s;
+    cursor: pointer;
+  
+  &.selected{
+    border: 1px solid mediumseagreen;
+  }
+  
+  &:hover{
+    transform: translateY(10px);
+  }
+  
+  .title{
+    font-size: 1.2em;
+  }
+  .diff-label{
+    font-size: 0.9em;
+  }
+  .description{
+    color: gray;
+    margin-top: -5px;
+    font-size: 0.8em;
+  }
+}
+
+.settings-button{
+    color: white;
+    cursor: pointer;
+    font-size: 2.5em;
+    margin: 30px;
+    position: absolute;
+    top: 0;
+    right: 0px;
+}

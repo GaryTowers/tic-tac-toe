@@ -16,7 +16,8 @@ angular.module('ticTacToeApp')
     var currentTurn = 0;
     var config = {
       size: 3,
-      emptyIcon: ''
+      emptyIcon: '',
+      winCount: 3
     }
 
     function playMove(move) {
@@ -50,7 +51,7 @@ angular.module('ticTacToeApp')
 
     function checkForkWin(playerIcon, lastMove) {
 
-      var winCount = board.length;
+      var winCount = config.winCount;
       var isWinningMove = false;
     
       // Count the consecutive symbols of the player based on the last move
@@ -145,11 +146,12 @@ angular.module('ticTacToeApp')
 
 
     return {
-      initGame: function (playersList, size, emptyIcon) {
+      initGame: function (playersList, size, winCount, emptyIcon) {
         players = playersList;
         currentPlayer = playersList[0];
         config.size = size || config.size;
         config.emptyIcon = emptyIcon || config.emptyIcon;
+        config.winCount = winCount || config.winCount;
         board = createNewBoard(size, size);
         return board;
       },
