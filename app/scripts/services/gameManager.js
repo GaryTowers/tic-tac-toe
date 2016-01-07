@@ -81,26 +81,29 @@ angular.module('ticTacToeApp')
         }
         
         // Count consecutive left diagonal symbols
-        var leftDiagonalRow = (lastMove.row - lastMove.col) + i;
-        leftDiagonalRow = (leftDiagonalRow < 0) ? 0 : leftDiagonalRow;
-        leftDiagonalRow = (leftDiagonalRow >= board.length - 1) ? board.length - 1 : leftDiagonalRow;
-        if (board[leftDiagonalRow][i] === playerIcon) {
-          leftDiagonalCount++;
+        var leftDiagonalRow = (lastMove.row - lastMove.col) + i;        
+        // If is not in boundaries then just ignore
+        if(leftDiagonalRow >= 0 && leftDiagonalRow < config.size){
+          if (board[leftDiagonalRow][i] === playerIcon) {
+            leftDiagonalCount++;
+          }
+          else {
+            leftDiagonalCount = 0;
+          }
         }
-        else {
-          leftDiagonalCount = 0;
-        }
+        
         
         
         // Count consecutive right diagonal symbols
-        var rightDiagonalRow = (lastMove.row + lastMove.col) + i;
-        rightDiagonalRow = (rightDiagonalRow < 0) ? 0 : rightDiagonalRow;
-        rightDiagonalRow = (rightDiagonalRow > board.length - 1) ? board.length - 1 : rightDiagonalRow;
-        if (board[rightDiagonalRow][i] === playerIcon) {
-          rightDiagonalCount++;
-        }
-        else {
-          rightDiagonalCount = 0;
+        var rightDiagonalRow = (lastMove.row + lastMove.col) - i;
+        // If is not in boundaries then just ignore
+        if(rightDiagonalRow >= 0 && rightDiagonalRow < config.size){
+          if (board[rightDiagonalRow][i] === playerIcon) {
+            rightDiagonalCount++;
+          }
+          else {
+            rightDiagonalCount = 0;
+          }
         }
         
         // If the consecutive symbols counts are greater or equal than the count required to win then this is a winning move 
