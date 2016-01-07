@@ -1,12 +1,12 @@
 <center ng-controller="SettingsCtrl">
 	<h3>Settings</h3>
 	<p>Choose difficulty</p>
-	<div ng-repeat="level in levels" ng-class="(level.selected)? 'diff-level selected' : 'diff-level'" ng-click="selectDifficulty(level.difficulty)">
-		<div class="title">{{level.title}}</div>
-		<div class="diff-label">{{level.label}}</div>
-		<div class="description">{{level.description}}</div>
+	<div class="levels-container">
+		<div ng-repeat="level in levels" ng-class="(level.selected)? 'diff-level selected' : 'diff-level'" ng-click="select(level, $index)">
+			<div class="title">{{level.title}}</div>
+			<div class="diff-label">{{level.label}}</div>
+			<div class="description">{{level.description}}</div>
+		</div>
 	</div>
-	<div class="button btn-success">
-		PLAY
-	</div>
+
 </center>
