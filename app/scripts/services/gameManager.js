@@ -16,7 +16,7 @@ angular.module('ticTacToeApp')
     var currentTurn = 0;
     var config = {
       size: 3,
-      emptyIcon: '-'
+      emptyIcon: ''
     }
 
     function playMove(move) {
@@ -112,9 +112,13 @@ angular.module('ticTacToeApp')
     }
 
     function nextTurn() {
-      players.shift();
+      currentPlayer.selected = false;
       players.push(currentPlayer);
+      players.shift();
+      
+      players[0].selected = true;
       currentPlayer = players[0];
+      
       currentTurn++;
     }
 

@@ -19,18 +19,20 @@ body {
   margin: 0 auto;
   left: 0;
   right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .board{
   @extend .center;
   position: absolute;
-  outline: 1px dashed white;
+  // outline: 1px dashed white;
   width: 50%;
 }
 
 .board-row{
   width: 100%;
-  outline: 1px dashed gray;
+  // outline: 1px dashed gray;
   margin-top: 3px;
   margin-bottom: 3px;
   display: flex;
@@ -38,14 +40,13 @@ body {
 }
 
 .cell{
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
   margin: 3px;
   border: 1px solid white;
   border-radius: 0px;
   transition: all ease-in 0.1s;
-  padding-top: 25px;
-  padding-left: 40px;
+  position: relative;
   
   &.empty{
     cursor: pointer;
@@ -62,10 +63,43 @@ body {
 }
 
 .symbol{
+  @extend .center;
+  position: absolute;
   color: white;
   font-size: 2em;
   text-align: center;
   width: 20%;
+}
+
+.player{
+  $width: 100px;
+  $height: 100px;
+  
+  width: $width;
+  height: $height;
+  position: absolute;
+  top: 40%;
+  transition: all ease 0.2;
+  
+  img{
+    width: $width;
+    height: $height;
+    border: 3px solid white;
+    border-radius: 150px;
+  }
+  
+  &.current{
+    transform: scale(1.5, 1.5);
+  }
+  
+  
+  &.player1{
+    left: 10%;
+  }
+
+  &.player2{
+    right: 10%;
+  }
 }
 
 
