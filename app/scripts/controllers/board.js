@@ -57,6 +57,8 @@ angular.module('ticTacToeApp')
             else if (results.status === 'TIE') {
                 // Display tie
                 $scope.hasGameEnded = true;
+                $scope.player1.selected = true;
+                $scope.player2.selected = true;
             }
             else {
                 $scope.hasGameEnded = false;

@@ -122,19 +122,19 @@ body {
     z-index: -20;
     
     &.player1{
-      transform: translateX(-35%) rotateZ(-55deg);
-      background-color: rgba(255, 255, 255, 0.6);
+      transform: translateX(-110%) rotateZ(-55deg);
+      background-color: #2B2E4A;
       &.selected{
         transform: translateX(-30%) rotateZ(-55deg);
       }
     }
     
     &.player2{
-      transform: translateX(85%) rotateZ(-55deg);
-      background-color: rgba(100, 200, 100, 0.6);
+      transform: translateX(110%) rotateZ(55deg);
+      background-color: #E84545;
       
       &.selected{
-        transform: translateX(0%) rotateZ(55deg);        
+        transform: translateX(-10%) rotateZ(55deg);        
       }
     }
 }
