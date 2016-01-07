@@ -1,3 +1,21 @@
+'use strict';
+
+/**
+ * @ngdoc function
+ * @name ticTacToeApp.controller:GameCtrl
+ * @description
+ * # GameCtrl
+ * Controller of the ticTacToeApp
+ */
+angular.module('ticTacToeApp')
+    .controller('GameCtrl', ['$scope', function ($scope) {
+        $scope.board = createNewBoard(5, 5);
+        console.log('Board length: ', $scope.board.length, $scope.board);
+    }]);
+
+
+
+
 var board = [];
 var PLAYER1 = 'x';
 var PLAYER2 = 'o';

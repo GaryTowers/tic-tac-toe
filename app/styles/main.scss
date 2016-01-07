@@ -1,0 +1,71 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+  background-color: #6869B0;
+}
+
+.center{
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+
+.board{
+  @extend .center;
+  position: absolute;
+  outline: 1px dashed white;
+  width: 50%;
+}
+
+.board-row{
+  width: 100%;
+  outline: 1px dashed gray;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  display: flex;
+}
+
+.cell{
+  width: 100px;
+  height: 100px;
+  margin: 3px;
+  border: 1px solid white;
+  border-radius: 0px;
+  transition: all ease-in 0.1s;
+  padding-top: 25px;
+  padding-left: 40px;
+  
+  &.empty{
+    cursor: pointer;
+     &:hover{
+      background-color: white;
+      border: 1px solid white;
+      
+      .symbol{
+        color: #6869B0;
+      }
+    }
+  }
+  
+}
+
+.symbol{
+  color: white;
+  font-size: 2em;
+  text-align: center;
+  width: 20%;
+}
+
+
+
