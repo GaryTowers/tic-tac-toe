@@ -46,19 +46,32 @@ angular.module('ticTacToeApp')
         };
 
         $scope.makeMove = function (row, col) {
-            if($scope.hasGameEnded){
+            if ($scope.hasGameEnded) {
                 return false;
             }
             var results = GameManager.playMove({ row: row, col: col });
             if (results.status === 'WINNER') {
                 // Display Winner
                 $scope.hasGameEnded = true;
+                $scope.gameResultsDialog = ngDialog.open({
+                    template: '<center><h3>Congratulations ' + results.player.name + ' you won!</h3></center>',
+                    scope: $scope,
+                    plain: true
+                });
+
             }
             else if (results.status === 'TIE') {
                 // Display tie
                 $scope.hasGameEnded = true;
                 $scope.player1.selected = true;
                 $scope.player2.selected = true;
+                
+                
+                $scope.gameResultsDialog = ngDialog.open({
+                    template: '<center><h3>Woah its a tie!</h3></center>',
+                    scope: $scope,
+                    plain: true
+                });
             }
             else {
                 $scope.hasGameEnded = false;
@@ -78,10 +91,10 @@ angular.module('ticTacToeApp')
                 scope: $scope
             });
         };
-        
+
         $scope.initGame();
 
-        
+
     }]);
 
 
