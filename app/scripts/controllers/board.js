@@ -30,7 +30,7 @@ angular.module('ticTacToeApp')
         $scope.hasGameEnded = false;
 
         $scope.initGame = function (boardSize) {
-            $scope.showBoard = false;
+            $scope.hasGameEnded = false;
             $scope.player1.selected = true;
             $scope.player2.selected = true;
             $timeout(function () {
@@ -76,7 +76,7 @@ angular.module('ticTacToeApp')
             });
         };
         
-        $scope.showSettings();
+        $scope.initGame();
 
         
     }]);
