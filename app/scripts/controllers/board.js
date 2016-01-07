@@ -29,7 +29,7 @@ angular.module('ticTacToeApp')
         $scope.board = [];
         $scope.hasGameEnded = false;
 
-        $scope.initGame = function (boardSize) {
+        $scope.initGame = function (boardSize, winCount) {
             $scope.hasGameEnded = false;
             $scope.player1.selected = true;
             $scope.player2.selected = true;
@@ -38,7 +38,8 @@ angular.module('ticTacToeApp')
                 $scope.board = [];
                 $scope.emptyIcon = '';
                 $scope.boardSize = boardSize || 3;
-                $scope.board = GameManager.initGame([$scope.player1, $scope.player2], $scope.boardSize, $scope.emptyIcon);
+                $scope.winCount = winCount || 3
+                $scope.board = GameManager.initGame([$scope.player1, $scope.player2], $scope.boardSize, $scope.winCount, $scope.emptyIcon);
                 $scope.showBoard = true;
             }, 500);
 
@@ -63,9 +64,9 @@ angular.module('ticTacToeApp')
             }
         }
 
-        $scope.selectDifficulty = function (size) {
+        $scope.selectDifficulty = function (size, winCount) {
             ngDialog.close($scope.settingsDialog);
-            $scope.initGame(size);
+            $scope.initGame(size, winCount);
         }
 
 
