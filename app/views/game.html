@@ -1,10 +1,10 @@
 <body>
   <div class="board">
     
-    <div class="board-row" ng-repeat="row in board">
+    <div class="board-row" ng-repeat="row in board" ng-init="rowIndex = $index">
 
-      <div class="cell empty" ng-repeat="cell in row track by $index">
-        <div class="symbol">x</div>
+      <div class="cell empty" ng-repeat="cell in row track by $index" ng-init="colIndex = $index" ng-click="makeMove(rowIndex, colIndex)">
+        <div class="symbol">{{cell}}</div>
       </div>
 
 
