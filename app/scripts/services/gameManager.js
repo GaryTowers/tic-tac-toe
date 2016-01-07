@@ -152,6 +152,9 @@ angular.module('ticTacToeApp')
         config.size = size || config.size;
         config.emptyIcon = emptyIcon || config.emptyIcon;
         config.winCount = winCount || config.winCount;
+        
+        currentTurn = 0;
+        
         board = createNewBoard(size, size);
         return board;
       },

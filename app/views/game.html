@@ -1,11 +1,11 @@
 <body>
   <span class="settings-button glyphicon glyphicon-cog" ng-click="showSettings()"></span>
 
-  <!--<div ng-class="(player1.selected)? 'player-indicator player1 fadeInLeft ' : 'animated player player1 fadeOutLeft'">
+  <div ng-class="(player1.selected)? 'player-indicator player1 selected' : 'player-indicator player1'">
   </div>
 
-  <div ng-class="(player2.selected)? 'player-indicator player2 fadeInRight ' : 'animated player player1 fadeOutRight'">
-  </div>-->
+  <div ng-class="(player2.selected)? 'player-indicator player2 selected' : 'player-indicator player2'">
+  </div>
   
   <div ng-class="(player1.selected)? 'animated player player1 bounceIn ' : 'animated player player1 bounceOut'">
     <img ng-src="{{player1.avatar}}" />
