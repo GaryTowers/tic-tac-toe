@@ -39,5 +39,5 @@ angular.module('ticTacToeApp')
       if ($scope.selectDifficulty) {
         $scope.selectDifficulty($scope.levels[index].difficulty, $scope.levels[index].winCount);
       }
-    }
+    };
   }]);

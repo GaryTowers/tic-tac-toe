@@ -17,14 +17,14 @@ angular.module('ticTacToeApp')
             icon: 'x',
             color: '#',
             selected: false
-        },
+        };
         $scope.player2 = {
             name: 'Rebel',
             avatar: '/images/avatars/rebel.png',
             icon: 'o',
             color: '#',
             selected: false
-        }
+        };
 
         $scope.board = [];
         $scope.hasGameEnded = false;
@@ -38,7 +38,7 @@ angular.module('ticTacToeApp')
                 $scope.board = [];
                 $scope.emptyIcon = '';
                 $scope.boardSize = boardSize || 3;
-                $scope.winCount = winCount || 3
+                $scope.winCount = winCount || 3;
                 $scope.board = GameManager.initGame([$scope.player1, $scope.player2], $scope.boardSize, $scope.winCount, $scope.emptyIcon);
                 $scope.showBoard = true;
             }, 500);
@@ -77,12 +77,12 @@ angular.module('ticTacToeApp')
                 $scope.hasGameEnded = false;
                 // Game goes on...
             }
-        }
+        };
 
         $scope.selectDifficulty = function (size, winCount) {
             ngDialog.close($scope.settingsDialog);
             $scope.initGame(size, winCount);
-        }
+        };
 
 
         $scope.showSettings = function () {

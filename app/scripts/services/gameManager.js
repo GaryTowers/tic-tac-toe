@@ -18,7 +18,7 @@ angular.module('ticTacToeApp')
       size: 3,
       emptyIcon: '',
       winCount: 3
-    }
+    };
 
     function playMove(move) {
       var player = currentPlayer;
@@ -60,7 +60,7 @@ angular.module('ticTacToeApp')
       var colsCount = 0;
       var rowsCount = 0;
       var leftDiagonalCount = 0;
-      var rightDiagonalCount = 0
+      var rightDiagonalCount = 0;
 
       for (var i = 0; i < board.length; i++) {
         
