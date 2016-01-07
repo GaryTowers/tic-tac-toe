@@ -8,19 +8,19 @@
  * Controller of the ticTacToeApp
  */
 angular.module('ticTacToeApp')
-    .controller('BoardCtrl', ['$scope', 'GameManager', function ($scope, GameManager) {
+    .controller('BoardCtrl', ['$scope', 'GameManager', '$timeout', function ($scope, GameManager, $timeout) {
 
 
         $scope.player1 = {
-            name: 'Gary',
-            avatar: 'http://puu.sh/mmtH7/0746a4f105.jpg',
+            name: 'John',
+            avatar: '/images/avatars/guy.jpg',
             icon: 'x',
             color: '#',
-            selected: true
+            selected: false
         },
         $scope.player2 = {
-            name: 'Robert',
-            avatar: 'http://puu.sh/mmuMC/b96a2882c7.png',
+            name: 'Rebel',
+            avatar: '/images/avatars/rebel.png',
             icon: 'o',
             color: '#',
             selected: false
@@ -29,11 +29,18 @@ angular.module('ticTacToeApp')
         $scope.board = [];
 
         $scope.initGame = function () {
-            $scope.board = [];
-            $scope.emptyIcon = '';
-            $scope.boardSize = 10;
-            $scope.board = GameManager.initGame([$scope.player1, $scope.player2], $scope.boardSize, $scope.emptyIcon);
-            $scope.currentPlayer = GameManager.getCurrentPlayer();
+            $scope.showBoard = false;
+            $scope.player1.selected = true;
+            $scope.player2.selected = true;
+            $timeout(function () {
+                $scope.player2.selected = false;
+                $scope.board = [];
+                $scope.emptyIcon = '';
+                $scope.boardSize = 10;
+                $scope.board = GameManager.initGame([$scope.player1, $scope.player2], $scope.boardSize, $scope.emptyIcon);
+                $scope.showBoard = true;
+            }, 1000);
+
         };
 
         $scope.makeMove = function (row, col) {

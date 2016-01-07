@@ -88,6 +88,13 @@ body {
     border-radius: 150px;
   }
   
+  .name{
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 7px;
+  }
+  
   &.current{
     transform: scale(1.5, 1.5);
   }
